@@ -42,7 +42,7 @@ Use Nova + KWGT
 
 ---
 
-### 🟣 Option B — PhosphorOS Launcher (Future)
+### 🟣 Option B — PhosphorOS Launcher (MVP)
 
 Install single APK
 
@@ -50,7 +50,7 @@ Install single APK
 ✔ native terminal UI
 ✔ no KWGT/Nova needed
 
-🚧 under development (`/launcher/`)
+🚧 active development (`/launcher/`)
 
 ---
 
@@ -208,24 +208,49 @@ This will become the **main product**.
 
 ---
 
-## 🔥 Features (Planned)
+## 🔥 Features (Current MVP)
 
-* Terminal-style home screen
-* Real command input:
+- Terminal-style home screen + real command prompt
+- Keyboard-first UX (Titan 2 friendly)
+  - DPAD ↑/↓ command history
+- App discovery + launching
+  - `apps [filter]`
+  - `open <name>` (fuzzy matching)
+- Favorites (persisted)
+  - `fav`, `fav add <name>`, `fav rm <name>`
+- Settings (persisted)
+  - `settings`, `settings off`
+  - `set prompt …`, `set font …`, `set phosphor …`, `set accent …`
+- System info widgets
+  - header shows BAT/NET/TIME (+ notification count)
+  - `status`
+- Notifications capture (optional)
+  - `notifs`, `notifs on`, `notifs clear`
+  - requires enabling notification access in Android settings
+- Media volume control
+  - `volume <0-100>`
+
+### Notes / limitations (Android OS)
+
+- Wi‑Fi/Bluetooth toggles are restricted for normal apps on modern Android.
+- Brightness is OS-controlled; the launcher can open display settings via `brightness`.
+
+## 💡 Command System (examples)
 
 ```bash
-> open web
-> open mail
-> status
+help
+status
+apps
+apps mail
+open chrome
+fav add gmail
+fav
+set font 18
+notifs on
+notifs
+volume 50
+clear
 ```
-
-* Built-in widgets:
-
-  * system stats
-  * logs
-  * network monitor
-
-* Keyboard-first UX (Titan 2 optimized)
 
 ---
 
@@ -243,15 +268,9 @@ launcher/
 
 ---
 
-## 💡 Command System (example)
+## 🧪 CI (APK builds)
 
-```bash
-open web
-open mail
-open files
-status
-clear
-```
+GitHub Actions builds a **debug APK artifact** on pushes/PRs that touch `launcher/`.
 
 ---
 
@@ -281,13 +300,13 @@ Secondary:
 ### Phase 1
 
 * ✅ theme kit
-* ⏳ KWGT presets
+* ✅ KWGT presets
 
 ### Phase 2
 
-* launcher prototype
-* command parser
-* basic UI
+* ✅ launcher prototype
+* ✅ command parser + app launch
+* ✅ basic UI + history/favorites/settings
 
 ### Phase 3
 
