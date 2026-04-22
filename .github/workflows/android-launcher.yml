@@ -1,0 +1,38 @@
+name: Android Launcher (Debug APK)
+
+on:
+  push:
+    paths:
+      - "launcher/**"
+      - ".github/workflows/android-launcher.yml"
+  pull_request:
+    paths:
+      - "launcher/**"
+      - ".github/workflows/android-launcher.yml"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: launcher
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Build debug APK
+        run: ./gradlew :app:assembleDebug
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: phosphoros-launcher-debug-apk
+          path: launcher/app/build/outputs/apk/debug/*.apk
+

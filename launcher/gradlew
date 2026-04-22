@@ -37,15 +37,15 @@ case "$(uname)" in
   NONSTOP* ) nonstop=true ;;
 esac
 
-CLASSPATH=$APP_HOME/gradle/wrapper/gradle-wrapper.jar
+CLASSPATH=$APP_HOME/gradle/wrapper/gradle-wrapper-main.jar:$APP_HOME/gradle/wrapper/gradle-wrapper-shared.jar
 
 APP_HOME=$(cd "$(dirname "$0")" && pwd)
 
-if [ ! -r "$CLASSPATH" ]; then
-  die "Missing $CLASSPATH.
-This repository includes wrapper scripts and properties, but not the wrapper JAR.
-On another machine with Gradle installed, run: gradle wrapper
-Or open this folder in Android Studio which will generate the wrapper files."
+if [ ! -r "$APP_HOME/gradle/wrapper/gradle-wrapper-main.jar" ] || [ ! -r "$APP_HOME/gradle/wrapper/gradle-wrapper-shared.jar" ]; then
+  die "Missing Gradle wrapper jars.
+Expected:
+  gradle/wrapper/gradle-wrapper-main.jar
+  gradle/wrapper/gradle-wrapper-shared.jar"
 fi
 
 if [ "$cygwin" = "true" -o "$msys" = "true" ] ; then

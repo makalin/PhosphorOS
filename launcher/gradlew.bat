@@ -6,13 +6,14 @@
 setlocal
 
 set APP_HOME=%~dp0
-set CLASSPATH=%APP_HOME%gradle\wrapper\gradle-wrapper.jar
+set CLASSPATH=%APP_HOME%gradle\wrapper\gradle-wrapper-main.jar;%APP_HOME%gradle\wrapper\gradle-wrapper-shared.jar
 
-if not exist "%CLASSPATH%" (
-  echo Missing %CLASSPATH%.
-  echo This repository includes wrapper scripts and properties, but not the wrapper JAR.
-  echo On another machine with Gradle installed, run: gradle wrapper
-  echo Or open this folder in Android Studio which will generate the wrapper files.
+if not exist "%APP_HOME%gradle\wrapper\gradle-wrapper-main.jar" (
+  echo Missing %APP_HOME%gradle\wrapper\gradle-wrapper-main.jar
+  exit /b 1
+)
+if not exist "%APP_HOME%gradle\wrapper\gradle-wrapper-shared.jar" (
+  echo Missing %APP_HOME%gradle\wrapper\gradle-wrapper-shared.jar
   exit /b 1
 )
 

@@ -1,0 +1,5 @@
+BAT: $bi(level)%
+NET: $if(nc(wifi)=connected,WIFI,$if(nc(cell)=connected,LTE,OFFLINE))
+TIME: $df(HH:mm)
+DATE: $df(EEE dd MMM)
+

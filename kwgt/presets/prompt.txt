@@ -1,0 +1,3 @@
+makalin@titan2:~$
+$if(df(ss)%2=0,█, )
+

@@ -1,0 +1,3 @@
+NOW: $mi(title)$if(mi(artist)!="", — $mi(artist),)
+VOL: $si(vol)%   BAT: $bi(level)%
+

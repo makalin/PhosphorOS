@@ -6,6 +6,9 @@ This folder is the **future standalone Android launcher** (single APK) described
 
 - Folder scaffolding is in place (`app/`, `core/`, `ui/`, etc.)
 - ✅ Now includes a **buildable Android project** in `launcher/app`
+  - Minimal terminal UI + command prompt
+  - Commands: `help`, `clear`, `status`, `apps`, `open <name>`, `fav`, `set`, `volume`, `brightness`, `settings`
+  - History navigation: DPAD ↑/↓
 
 ### Intended architecture
 
@@ -18,9 +21,27 @@ This folder is the **future standalone Android launcher** (single APK) described
 
 ### Next steps (when implementing)
 
-- Implement command parsing (`open`, `status`, `clear`).
-- Add real app launching via `PackageManager`.
-- Add widgets (battery/network/time) and persistent settings.
+- Better autocomplete + inline hints
+- Notification listener module (requires user permission)
+- Optional plugin system
+
+### Commands (current)
+
+Examples:
+
+```bash
+help
+status
+apps
+apps mail
+open chrome
+fav add gmail
+fav
+set font 18
+set phosphor #00FF9C
+volume 50
+clear
+```
 
 ### Build on another computer
 
@@ -34,10 +55,4 @@ This repo includes Gradle build scripts and wrapper configuration. To build with
 ./gradlew assembleDebug
 ```
 
-Note: The wrapper scripts are included, but the wrapper JAR is intentionally not committed here; if `./gradlew` complains, generate it once with:
-
-```bash
-gradle wrapper
-```
-
-Or open `launcher/` in Android Studio once (it will generate wrapper files automatically).
+The Gradle wrapper jars are committed under `launcher/gradle/wrapper/`, so `./gradlew` should work in CI and on other machines.

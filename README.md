@@ -97,6 +97,8 @@ From:
 /wallpapers/
 ```
 
+See also: `wallpapers/README.md`
+
 Recommended:
 
 * `phosphor_green.png`
@@ -114,6 +116,12 @@ Recommended:
 ---
 
 ### 4. KWGT Widgets
+
+Snippets live in:
+
+```bash
+/kwgt/presets/
+```
 
 #### Prompt
 
@@ -148,6 +156,8 @@ Assign tap actions to apps.
 ### 5. Icons
 
 Use `/icons/` or replicate style:
+
+See also: `icons/README.md`
 
 | App      | Terminal Label |
 | -------- | -------------- |
