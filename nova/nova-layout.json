@@ -1,0 +1,22 @@
+{
+  "launcher": "Nova Launcher",
+  "grid": "4x6",
+  "labels": true,
+  "dock": false,
+  "status_bar": true,
+  "font_recommendations": [
+    "VT323",
+    "JetBrains Mono",
+    "IBM Plex Mono"
+  ],
+  "app_labels": {
+    "Chrome": "web",
+    "Gmail": "mail",
+    "Files": "dir",
+    "Spotify": "snd",
+    "Notes": "log",
+    "Settings": "sys",
+    "Camera": "cam",
+    "Messages": "chat"
+  }
+}

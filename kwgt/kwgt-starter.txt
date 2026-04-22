@@ -1,0 +1,40 @@
+# PhosphorOS KWGT Starter Text
+
+Use a monospace font like VT323 or JetBrains Mono.
+Recommended color:
+- Green: #00FF9C
+- Amber: #FFC857
+- Blue: #50DCFF
+
+Suggested widgets:
+
+## 1) Prompt Widget
+makalin@titan2:~$
+█
+
+## 2) System Status
+SYS STATUS
+BAT: $bi(level)$%
+NET: $nc(ssid)$
+RAM: $rm(used)$ / $rm(total)$
+TEMP: $wi(temp)$°C
+
+## 3) Command Launcher
+> web
+> mail
+> files
+> music
+> notes
+
+Assign each line a touch action in KWGT.
+
+## 4) Log Stream
+[$df(hh:mm)$] sync complete
+[$df(hh:mm)$] net stable
+[$df(hh:mm)$] task updated
+[$df(hh:mm)$] standby...
+
+## 5) Clock Header
+PHOSPHOR OS v1.0
+$df(EEE, dd MMM)$
+$df(HH:mm)$

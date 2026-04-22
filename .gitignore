@@ -1,0 +1,21 @@
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Android / Gradle (for future launcher work)
+**/.gradle/
+**/build/
+**/captures/
+**/.externalNativeBuild/
+**/.cxx/
+local.properties
+
+# Node (if added later)
+node_modules/
